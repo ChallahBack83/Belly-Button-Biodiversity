@@ -1,9 +1,8 @@
-/* body {
-    background-color: #98fb98 ;
-    /* color: #f7f7f7;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: black; 
-} */
+body {
+    background-color: #D3D3D3;
+    background-size: auto auto;
+}  
+
 .jumbotron {
     background-image: url("greenBacteria.jpg");
     background-size: cover;

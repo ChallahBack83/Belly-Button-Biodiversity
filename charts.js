@@ -113,12 +113,19 @@ function buildCharts(sample) {
 
     // // Deliverable 1: 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: {text: "<b>Top 10 Bacteria Cultures Found</b>"},
-      font: {family: "Times New Roman", size: 18},
+      title: {
+        text: "<b>Top 10 Bacteria Cultures Found</b>",
+        font: {family: "Times New Roman", size: 20}
+      },
+      font: {family: "Times New Roman"},
+      plot_bgcolor: "#D3D3D3",
+      paper_bgcolor: "#D3D3D3"
     };
- 
+    // making charts responsive to page size/for mobile
+    var config1 = {responsive: true};
+
     // Deliverable 1: 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout);
+    Plotly.newPlot("bar", barData, barLayout, config1);
     
     // Deliverable 2: 1. Create the trace for the bubble chart.
     // var sizePlot = sampleValues.map(s => s*30);
@@ -132,10 +139,7 @@ function buildCharts(sample) {
       mode: "markers",
       marker: {
         size: sampleValues.map(s => s*30),
-        // sizeref: 1.5,
         sizemode: "area",
-        // sizemin: .01,
-        // sizemax: 500,
         color: otuIDs,
         colorscale: "Earth",
         opacity: 0.7
@@ -144,14 +148,22 @@ function buildCharts(sample) {
     }];
     // Deliverable 2: 2. Create the layout for the bubble chart.
     var bubbleLayout ={
-      title: {text: "<b>Bacteria Cultures Per Sample</b>"},
-      font: {family: "Times New Roman", size: 18},
-      xaxis: {title: "OTU ID"},
-      hovermode: "closest"
+      title: {
+        text: "<b>Bacteria Cultures Per Sample</b>",
+        font: {family: "Times New Roman", size: 20}
+      },
+      xaxis: {
+        title: "OTU ID"},
+      hovermode: "closest",
+      font: {family: "Times New Roman"},
+      plot_bgcolor: "#D3D3D3",
+      paper_bgcolor: "#D3D3D3"
     };
     
+    var config2 = {responsive: true};
+
     // Deliverable 2: 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout, config2);
 
     // Deliverable 3: 4. Create the trace for the gauge chart.
     var gaugeData = [trace3 = {
@@ -174,13 +186,17 @@ function buildCharts(sample) {
 
     // Deliverable 3: 5. Create the layout for the gauge chart.
     var gaugeLayout = {
-      title: {text: "<b>Belly Button Washing Frequency</b>"},
-      font: {family: "Times New Roman", size: 18},
-      width: 600,
-      height: 400,
+      title: {
+        text: "<b>Belly Button Washing Frequency</b>",
+        font: {family: "Times New Roman", size: 20}
+      },
+      font: {family: "Times New Roman"},
+      plot_bgcolor: "#D3D3D3",
+      paper_bgcolor: "#D3D3D3"
     };
     
+    var config3 = {responsive: true};
     // Deliverable 3: 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout, config3);
   });
 }
